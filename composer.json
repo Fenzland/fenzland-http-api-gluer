@@ -1,0 +1,19 @@
+{
+    "name": "fenzland/http-api-gluer",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Fenz",
+            "email": "uukoo@163.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Fenzland\\HttpApiGluer\\": "src/"
+        }
+    }
+}
