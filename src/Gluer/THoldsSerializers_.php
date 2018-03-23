@@ -77,6 +77,7 @@ trait THoldsSerializers_
 		'application/php-serialized'=> S\PHPSerialized::class,
 		'application/json'=> S\JSON::class,
 		'application/x-www-form-urlencoded'=> S\Form::class,
+		'multipart/form-data'=> S\FormM::class,
 	];
 
 	/**
