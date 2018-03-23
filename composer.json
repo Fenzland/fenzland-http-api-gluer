@@ -23,7 +23,8 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Fenzland\\HttpApiGluer\\Tests\\": "tests/"
+            "Fenzland\\HttpApiGluer\\Tests\\": "tests/",
+            "Fenzland\\HttpApiGluer\\TestServer\\": "test_server/"
         },
         "files": [
             "tests/helpers.inc"
