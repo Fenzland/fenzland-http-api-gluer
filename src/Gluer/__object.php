@@ -13,6 +13,8 @@ trait __object
 {
 	use THoldsProperties;
 
+	use TTransforming;
+
 	/**
 	 * Method call
 	 *
