@@ -76,6 +76,7 @@ trait THoldsSerializers_
 		'application/octet-stream'=> S\Raw::class,
 		'application/php-serialized'=> S\PHPSerialized::class,
 		'application/json'=> S\JSON::class,
+		'application/x-www-form-urlencoded'=> S\Form::class,
 	];
 
 	/**
