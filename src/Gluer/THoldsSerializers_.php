@@ -72,7 +72,9 @@ trait THoldsSerializers_
 	 *
 	 * @var    array
 	 */
-	static protected $serializers= [];
+	static protected $serializers= [
+		'application/octet-stream'=> S\Raw::class,
+	];
 
 	/**
 	 * Static method checkSerializer_
