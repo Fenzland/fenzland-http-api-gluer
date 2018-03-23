@@ -74,6 +74,7 @@ trait THoldsSerializers_
 	 */
 	static protected $serializers= [
 		'application/octet-stream'=> S\Raw::class,
+		'application/php-serialized'=> S\PHPSerialized::class,
 	];
 
 	/**
