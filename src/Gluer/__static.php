@@ -8,5 +8,5 @@ namespace Fenzland\HttpApiGluer\Gluer;
 
 trait __static
 {
-	#
+	use TMakeInstance_;
 }
