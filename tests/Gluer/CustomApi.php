@@ -11,7 +11,7 @@ use Fenzland\DataParser\Transformer;
 
 ////////////////////////////////////////////////////////////////
 
-class JSONBase64Api extends TestCase
+class CustomApi extends TestCase
 {
 
 	/**
