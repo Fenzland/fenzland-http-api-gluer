@@ -172,8 +172,24 @@ trait THoldsSerializers_
 	{
 		static::checkSerializerSupported_( $mime );
 
-		$serializer= static::$serializers_[$mime];
+		$serializer= static::getSerializer_( $mime );
 
+		return static::instantiateSerializer_( $serializer );
+	}
+
+	/**
+	 * Static method instantiateSerializer_
+	 *
+	 * @static
+	 *
+	 * @access protected
+	 *
+	 * @param  mixed $serializer
+	 *
+	 * @return S\ASerializer
+	 */
+	static protected function instantiateSerializer_( $serializer ):S\ASerializer
+	{
 		return is_object( $serializer )? $serializer : new $serializer;
 	}
 
