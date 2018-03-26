@@ -29,13 +29,13 @@ trait THoldsSerializers_
 
 		static::checkSerializer_( $serializer );
 
-		static::$serializers[$mime]= $serializer;
+		static::$serializers_[$mime]= $serializer;
 
 		return self::class;
 	}
 
 	/**
-	 * Static method getSerializer
+	 * Static method getSerializer_
 	 *
 	 * @static
 	 *
@@ -45,13 +45,13 @@ trait THoldsSerializers_
 	 *
 	 * @return mixed
 	 */
-	static public function getSerializer( string$mime )
+	static public function getSerializer_( string$mime )
 	{
-		return static::$serializers[$mime]??null;
+		return static::$serializers_[$mime]??null;
 	}
 
 	/**
-	 * Static method getSerializers
+	 * Static method getSerializers_
 	 *
 	 * @static
 	 *
@@ -59,9 +59,9 @@ trait THoldsSerializers_
 	 *
 	 * @return array
 	 */
-	static public function getSerializers():array
+	static public function getSerializers_():array
 	{
-		return static::$serializers;
+		return static::$serializers_;
 	}
 
 	/**
@@ -72,7 +72,7 @@ trait THoldsSerializers_
 	 *
 	 * @var    array
 	 */
-	static protected $serializers= [
+	static protected $serializers_= [
 		'application/octet-stream'=> S\Raw::class,
 		'application/php-serialized'=> S\PHPSerialized::class,
 		'application/json'=> S\JSON::class,
@@ -128,7 +128,7 @@ trait THoldsSerializers_
 	 */
 	static protected function checkSerializerNotRegistered_( string$mime ):void
 	{
-		if( isset( static::$serializers[$mime] ) )
+		if( isset( static::$serializers_[$mime] ) )
 		{
 			throw new \Exception(
 				"Content type $mime is already registered."
@@ -149,7 +149,7 @@ trait THoldsSerializers_
 	 */
 	static protected function checkSerializerSupported_( string$mime ):void
 	{
-		if(!( isset( static::$serializers[$mime] ) ))
+		if(!( isset( static::$serializers_[$mime] ) ))
 		{
 			throw new \Exception(
 				"Content type $mime is not supported. Please register serialize first."
@@ -158,7 +158,7 @@ trait THoldsSerializers_
 	}
 
 	/**
-	 * Static method getSerializer_
+	 * Static method achieveSerializer_
 	 *
 	 * @static
 	 *
@@ -168,11 +168,11 @@ trait THoldsSerializers_
 	 *
 	 * @return S\ASerializer
 	 */
-	static protected function getSerializer_( string$mime ):S\ASerializer
+	static protected function achieveSerializer_( string$mime ):S\ASerializer
 	{
 		static::checkSerializerSupported_( $mime );
 
-		$serializer= static::$serializers[$mime];
+		$serializer= static::$serializers_[$mime];
 
 		return is_object( $serializer )? $serializer : new $serializer;
 	}
