@@ -57,8 +57,8 @@ class RegisterSerializer extends TestCase
 
 		Testee::registerSerializer_( 'test/class', $class );
 
-		$this->assertArrayHasKey( 'test/class', Testee::getSerializers() );
-		$this->assertSame( $class, Testee::getSerializer( 'test/class' ) );
+		$this->assertArrayHasKey( 'test/class', Testee::getSerializers_() );
+		$this->assertSame( $class, Testee::getSerializer_( 'test/class' ) );
 	}
 
 	/**
@@ -103,8 +103,8 @@ class RegisterSerializer extends TestCase
 
 		Testee::registerSerializer_( 'test/instance', $instance );
 
-		$this->assertArrayHasKey( 'test/instance', Testee::getSerializers() );
-		$this->assertSame( $instance, Testee::getSerializer( 'test/instance' ) );
+		$this->assertArrayHasKey( 'test/instance', Testee::getSerializers_() );
+		$this->assertSame( $instance, Testee::getSerializer_( 'test/instance' ) );
 	}
 
 	/**
